@@ -1,0 +1,25 @@
+Metadata-Version: 2.0
+Name: django-materialize-css
+Version: 0.0.1
+Summary: Provides a Django app whose static folder contains Materialize CSS assets
+Home-page: https://github.com/edvm/django-materialize-css
+Author: Emiliano Dalla Verde Marcozzi
+Author-email: edvm@fedoraproject.org
+License: GPL v3
+Download-URL: http://pypi.python.org/pypi/django-materialize-css
+Keywords: django material design app staticfiles materialize css
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Topic :: Software Development :: Libraries
+
+UNKNOWN
+
+

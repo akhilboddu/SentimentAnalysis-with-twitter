@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Sentiment Analysis | Twitter</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static '/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <h1 class="header center orange-text" id="bla">SentimentAnalysis with Tweets</h1>
+    <div class="card-panel center teal lighten-2">Analysing search results for <em><strong>{{ search }}</strong></em></div>
+    <div class="row">
+      <div class="center blue-text"></div>
+    </div>
+
+    <!-- Printing out all the tweets  -->
+    <!-- *********************************** -->
+    <div class="row container col s12 m12">
+
+    {% for dict in all_tweets %}
+
+     <div class="card {{ dict.color }}" >
+        <div class="card-content white-text">
+        <span class="card-title">{{ dict.username }}</span>
+        <p>{{ dict.tweet}}</p>
+        <p><i>The polarity of this tweet is <b>{{ dict.polarity }}</b></i></p>
+        </div>
+    </div>
+
+    {% endfor %}
+
+    </div> 
+
+    <div class="container row center">
+      <a href="{% url 'download' %}" class="btn-large waves-effect waves-light orange modal-trigger tooltipped" data-position="left" data-delay="50" data-tooltip="Click to download csv">Download</a>
+      <a href="{% url 'index' %}" id="download-button" class="btn-large waves-effect waves-light orange tooltipped" data-position="right" data-delay="50" data-tooltip="Click to search again">Analyse again</a>
+    </div>
+    <br><br>
+
+    <div id="download" class="modal">
+      <div class="modal-content">
+        <h4>Downloading analysis.csv</h4>
+        <p>This can be used for your own analysis</p>
+      </div>
+    </div>
+
+<footer class="page-footer orange">
+  <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">About me</h5>
+              <p class="grey-text text-lighten-4">Undergraduate at University Of Cape Town, double majoring in Computer Science and Information Systems. I was born in India, brought up in Kenya and now studying in South Africa. I am interested in Artificial Intelligence, particularly deep learning. Also love food. Alot. </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Connect With me</h5>
+              <div>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/akhil.boddu" target="_blank">Facebook</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://github.com/akhilboddu" target="_blank">GitHub</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/akhilboddu/" target="_blank">LinkedIn</a></li>
+                <li><a class="grey-text text-lighten-3" href="mailto:akhil1234mara@gmail.com" target="_blank">Email</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <p>Made by Akhil Boddu</p>
+    </div>
+  </div>
+</footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+  <script type="text/javascript">
+
+      $(document).ready(function(){
+        $('.modal').modal();
+        });
+
+      $('#getcsv').click(function(){
+        download('../../analysis.csv');
+      });
+  </script>
+
+  </body>
+</html>
+

@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Sentiment Analysis | Twitter</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static '/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+  <!-- Main form - Action area -->
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="mainHeading center orange-text">SentimentAnalysis with Tweets</h1>
+      <div class="input-field col s6">
+         <form method="POST" action="/search/"> 
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="row center need-space" >
+              <input type='submit' value='Analyse' id="download-button" class="btn-large waves-effect waves-light orange tooltipped padbutton" data-position="bottom" data-delay="50" data-tooltip="Click to view Analysed tweets">
+            </div>
+        </form>
+         
+        </div>
+      
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">search</i></h2>
+            <h5 class="center">Search</h5>
+
+            <p class="light">Search for a keyword that you would like to Analyse</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">pie_chart</i></h2>
+            <h5 class="center">Analyse</h5>
+
+            <p class="light">Tweets will be returned as positive, negative or neutral</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">file_download</i></h2>
+            <h5 class="center">Download</h5>
+            <p class="light">Use the downloaded CSV File for your own analysis</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">About me</h5>
+                <p class="grey-text text-lighten-4">Undergraduate at University Of Cape Town, double majoring in Computer Science and Information Systems. I was born in India, brought up in Kenya and now studying in South Africa. I am interested in Artificial Intelligence, particularly deep learning. Also love food. Alot. </p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Connect With me</h5>
+                <div>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/akhil.boddu" target="_blank">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/akhilboddu" target="_blank">GitHub</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/akhilboddu/" target="_blank">LinkedIn</a></li>
+                  <li><a class="grey-text text-lighten-3" href="mailto:akhil1234mara@gmail.com" target="_blank">Email</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <p>Made by Akhil Boddu</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+
+  </body>
+</html>

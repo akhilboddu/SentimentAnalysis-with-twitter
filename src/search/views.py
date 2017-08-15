@@ -14,10 +14,10 @@ import tweepy
 from textblob import TextBlob
 import csv
 
-consumer_key = "sHRxqSp3bNAnWJUkCbk6o5QId"
-consumer_secret = "hgYO6QrQyoLuVLPdlRdaUMShB2WvmSSG9HSkoLmcZLLXK96Xr1"
-access_token = "778157980864901122-XWS2Zirk9LEzf6aaP32yJGKZtWsZpQW"
-access_token_secret = "EvdGivtun66bjAakTSHI0fdgCDlFuYvZhoPnulcMkoutT"
+consumer_key = "ENTER HERE"
+consumer_secret = "ENTER HERE"
+access_token = "ENTER HERE"
+access_token_secret = "ENTER HERE"
 
 def index(request, *args, **kwargs):
 	""" Home page """

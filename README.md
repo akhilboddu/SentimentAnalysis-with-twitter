@@ -4,7 +4,7 @@ App that can search for tweets based on a desired topic or person. User can view
 
 View the app live at: [https://sentiment-analysis-twitter.herokuapp.com/](https://sentiment-analysis-twitter.herokuapp.com/)
 
-[![](https://photos.google.com/search/_tra_/photo/AF1QipNW3KQYHLVRC1M7Z2Z0yIlp0qOJGV9ncd5OPKyV)](https://photos.google.com/search/_tra_/photo/AF1QipNW3KQYHLVRC1M7Z2Z0yIlp0qOJGV9ncd5OPKyV)
+[![](http://i.imgur.com/jRC0KkR.jpg)](https://{http://imgur.com/jRC0KkR})
 
 ## Development Guide
 

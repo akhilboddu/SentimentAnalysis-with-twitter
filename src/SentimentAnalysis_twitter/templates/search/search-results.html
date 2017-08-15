@@ -17,7 +17,46 @@
 
 <body>
   <h1 class="header center orange-text" id="bla">SentimentAnalysis with Tweets</h1>
-    <div class="card-panel center teal lighten-2">Analysing search results for <em><strong>{{ search }}</strong></em></div>
+
+    <div class="card-panel center teal lighten-2 card-content black-text">Analysing search results for <em><strong>{{ search }} ...</strong></em></div>
+    <div class="row">
+      <div class="center blue-text"></div>
+    </div>
+
+    <!-- Brief analysis  -->
+    <!-- *********************************** -->
+    <div class="container row">
+
+      <div class="col s4">
+          <div class="card green">
+              <div class="card-content white-text" style="word-wrap: break-word">
+                <span class="card-title center">Positive Tweets</span>
+                <p class="center"> Score: {{ percentage.positive }}%</p>
+              </div>
+          </div>
+      </div>
+      <div class="col s4">
+          <div class="card blue">
+              <div class="card-content white-text" style="word-wrap: break-word">
+                <span class="card-title center">Neutral Tweets</span>
+                <p class="center"> Score: {{ percentage.neutral }}%</p>
+              </div>
+          </div>
+      </div>
+      <div class="col s4">
+          <div class="card red">
+              <div class="card-content white-text" style="word-wrap: break-word">
+                <span class="card-title center">Negative Tweets</span>
+                <p class="center"> Score: {{ percentage.negative }}%</p>
+              </div>
+          </div>
+      </div>
+
+    </div>
+
+    <!-- Verdict  -->
+    <!-- *********************************** -->
+    <div class="card-panel center teal lighten-2">Most tweets that arent neutral about <em><strong>{{ search }}</strong></em> are <strong>{{ percentage.max }}</strong></div>
     <div class="row">
       <div class="center blue-text"></div>
     </div>
@@ -90,10 +129,7 @@
       $(document).ready(function(){
         $('.modal').modal();
         });
-
-      $('#getcsv').click(function(){
-        download('../../analysis.csv');
-      });
+      
   </script>
 
   </body>

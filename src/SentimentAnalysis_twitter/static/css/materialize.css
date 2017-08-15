@@ -6424,7 +6424,6 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
 .input-field input[type=search] {
   display: block;
   line-height: inherit;
-
 }
 
 .nav-wrapper .input-field input[type=search] {

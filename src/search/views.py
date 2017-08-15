@@ -41,11 +41,12 @@ def get_name(request):
 	public_tweets = SentimentAnalysis_twitter.search_twitter(search)
 	global all_tweets
 	all_tweets = SentimentAnalysis_twitter.classify_tweets(public_tweets)
-	# SentimentAnalysis_twitter.save_as_csv(public_tweets)
-
+	percentage = SentimentAnalysis_twitter.percent_calc()
+	
 	context = {
 		'search' : search,
-		'all_tweets' : all_tweets
+		'all_tweets' : all_tweets,
+		'percentage' : percentage,
 	}
 
 	return render(request, 'search/search-results.html', context)

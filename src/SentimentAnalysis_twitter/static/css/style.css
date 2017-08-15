@@ -6,23 +6,9 @@
  * Made By MaterializeCSS.com
  */
 
-input {
-  width: 98%;
-  padding: 1%;
-}
-
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
 }
-.mainHeading {
-	padding-bottom: 30px;
-}
-.need-space {
-	padding-top: 50px;
-}
-
-
-

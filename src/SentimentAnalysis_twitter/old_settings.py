@@ -49,6 +49,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    #for whitenoise - heroku
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'SentimentAnalysis_twitter.urls'
@@ -115,12 +118,19 @@ USE_L10N = True
 
 USE_TZ = True
 
+#for heroku
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'SentimentAnalysis_twitter.staticfiles') #for heroku
 STATIC_URL = '/static/'
+
+#for heroku whitenoise - collecting of static assets
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
-    'SentimentalAnalysis_twitter/static'
+    'SentimentAnalysis_twitter/static'
 ]

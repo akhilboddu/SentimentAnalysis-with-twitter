@@ -14,31 +14,108 @@ def search_twitter(searchItem):
 	public_tweets = api.search(searchItem)
 	return public_tweets
 
+
 def classify_tweets(public_tweets):
 	""" Classify tweets into an array """
 	all_tweets = []
+
+	global positive_count
+	global neutral_count
+	global negative_count
+
+	positive_count = 0
+	neutral_count = 0
+	negative_count = 0	
+
 	for tweet in public_tweets:
 
 		tweet_collection = {}
-
+		
 		polarity = TextBlob(tweet.text).sentiment.polarity
 
 		tweet_collection['username'] = tweet.user.screen_name
 		tweet_collection['tweet'] = tweet.text
 		tweet_collection['polarity'] = polarity
+		# tweet_collection['positive_count'] = positive_count
+		# tweet_collection['neutral_count'] = neutral_count
+		# tweet_collection['negative_count'] = negative_count
 
 		if polarity > 0:
 			tweet_collection['color'] = 'green'
 			tweet_collection['sentiment'] = 'positive'
+			positive_count += 1
+			# tweet_collection['positive_count'] = positive_count
 		elif polarity < 0:
 			tweet_collection['color'] = 'red'
 			tweet_collection['sentiment'] = 'negative'
+			negative_count += 1
+			# tweet_collection['negative_count'] = neutral_count
 		else:
 			tweet_collection['color'] = 'blue'
 			tweet_collection['sentiment'] = 'neutral'
+			neutral_count += 1
+			# tweet_collection['neutral_count'] = neutral_count
 
 
 		all_tweets.append(tweet_collection)
 
+	# total_tweets = positive_count + neutral_count + negative_count
+
+	# percent_positive = (float(positive_count)/float(total_tweets)) * 100
+	# percent_neutral = (float(neutral_count)/float(total_tweets)) * 100
+	# percent_negative = (float(negative_count)/float(total_tweets)) * 100
+	# print '***************'
+	# print percent_positive
+	# print percent_neutral
+	# print percent_negative
+	# print '***************'
+
 	return all_tweets
+
+
+def percent_calc():
+	count = {}
+
+	total_tweets = positive_count + neutral_count + negative_count
+
+	if max(positive_count,negative_count) == positive_count:
+		count['max'] = 'Positive'
+	elif max(positive_count,negative_count) == negative_count:
+		count['max'] = 'Negative'
+	else:
+		count['max'] = 'Balanced'
+
+	percent_positive = (float(positive_count)/float(total_tweets)) * 100
+	percent_neutral = (float(neutral_count)/float(total_tweets)) * 100
+	percent_negative = (float(negative_count)/float(total_tweets)) * 100
+
+	count['positive'] = "%.2f" % percent_positive 
+	count['neutral'] = "%.2f" % percent_neutral
+	count['negative'] = "%.2f" % percent_negative
+
+	return count
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

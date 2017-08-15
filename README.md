@@ -4,6 +4,8 @@ App that can search for tweets based on a desired topic or person. User can view
 
 View the app live at: [https://sentiment-analysis-twitter.herokuapp.com/](https://sentiment-analysis-twitter.herokuapp.com/)
 
+[![](https://photos.google.com/search/_tra_/photo/AF1QipNW3KQYHLVRC1M7Z2Z0yIlp0qOJGV9ncd5OPKyV)](https://photos.google.com/search/_tra_/photo/AF1QipNW3KQYHLVRC1M7Z2Z0yIlp0qOJGV9ncd5OPKyV)
+
 ## Development Guide
 
 1. Create a virtualenv. `virtualenv somename`

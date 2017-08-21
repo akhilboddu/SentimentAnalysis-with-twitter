@@ -31,15 +31,15 @@ def classify_tweets(public_tweets):
 
 		tweet_collection = {}
 		
+		
 		polarity = TextBlob(tweet.text).sentiment.polarity
 
+		
 		tweet_collection['username'] = tweet.user.screen_name
 		tweet_collection['tweet'] = tweet.text
 		tweet_collection['polarity'] = polarity
-		# tweet_collection['positive_count'] = positive_count
-		# tweet_collection['neutral_count'] = neutral_count
-		# tweet_collection['negative_count'] = negative_count
 
+		
 		if polarity > 0:
 			tweet_collection['color'] = 'green'
 			tweet_collection['sentiment'] = 'positive'

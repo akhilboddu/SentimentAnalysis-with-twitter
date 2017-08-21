@@ -44,31 +44,18 @@ def classify_tweets(public_tweets):
 			tweet_collection['color'] = 'green'
 			tweet_collection['sentiment'] = 'positive'
 			positive_count += 1
-			# tweet_collection['positive_count'] = positive_count
+
 		elif polarity < 0:
 			tweet_collection['color'] = 'red'
 			tweet_collection['sentiment'] = 'negative'
 			negative_count += 1
-			# tweet_collection['negative_count'] = neutral_count
 		else:
 			tweet_collection['color'] = 'blue'
 			tweet_collection['sentiment'] = 'neutral'
 			neutral_count += 1
-			# tweet_collection['neutral_count'] = neutral_count
 
 
 		all_tweets.append(tweet_collection)
-
-	# total_tweets = positive_count + neutral_count + negative_count
-
-	# percent_positive = (float(positive_count)/float(total_tweets)) * 100
-	# percent_neutral = (float(neutral_count)/float(total_tweets)) * 100
-	# percent_negative = (float(negative_count)/float(total_tweets)) * 100
-	# print '***************'
-	# print percent_positive
-	# print percent_neutral
-	# print percent_negative
-	# print '***************'
 
 	return all_tweets
 

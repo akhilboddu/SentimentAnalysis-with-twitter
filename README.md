@@ -18,4 +18,6 @@ View the app live at: [https://sentiment-analysis-twitter.herokuapp.com/](https:
 
 
 
-## All rights reserved by Akhil Boddu ©
+## Copyright © 2017 
+All rights reserved by Akhil Boddu 
+

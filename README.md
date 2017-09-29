@@ -17,3 +17,5 @@ View the app live at: [https://sentiment-analysis-twitter.herokuapp.com/](https:
 7. Run the server as localhost. `python manage.py runserver`
 
 
+
+## All rights reserved by Akhil Boddu ©
